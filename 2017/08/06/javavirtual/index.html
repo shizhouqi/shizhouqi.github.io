@@ -6,18 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://shizhouqi.github.io">
-  <title>Archives: 2017 | 而立之年</title>
+  <title>JAVA虚拟机类加载机制 | 而立之年</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="开始记录生活的点滴">
-<meta property="og:type" content="website">
-<meta property="og:title" content="而立之年">
-<meta property="og:url" content="https://shizhouqi.github.io/archives/2017/index.html">
+  <meta name="description" content="JAVA类加载过程">
+<meta name="keywords" content="JAVA,JVM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA虚拟机类加载机制">
+<meta property="og:url" content="https://shizhouqi.github.io/2017/08/06/javavirtual/index.html">
 <meta property="og:site_name" content="而立之年">
-<meta property="og:description" content="开始记录生活的点滴">
+<meta property="og:description" content="JAVA类加载过程">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://note.youdao.com/yws/api/personal/file/373A829797DD4A88A69A1FD408AB8535?method=download&shareKey=b76f2d800fdf228d1d31541e358a29ad">
+<meta property="og:updated_time" content="2018-08-06T12:12:23.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="而立之年">
-<meta name="twitter:description" content="开始记录生活的点滴">
+<meta name="twitter:title" content="JAVA虚拟机类加载机制">
+<meta name="twitter:description" content="JAVA类加载过程">
+<meta name="twitter:image" content="https://note.youdao.com/yws/api/personal/file/373A829797DD4A88A69A1FD408AB8535?method=download&shareKey=b76f2d800fdf228d1d31541e358a29ad">
   
   
     <link rel="icon" href="/asset/img/icon.png">
@@ -137,36 +141,129 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-javavirtual" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/06/javavirtual/" class="archive-article-date">
-  	<time datetime="2017-08-06T11:24:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-06</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/06/javavirtual/">JAVA虚拟机类加载机制</a>
+    <h1 class="article-title" itemprop="name">
+      JAVA虚拟机类加载机制
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/08/06/javavirtual/" class="archive-article-date">
+  	<time datetime="2017-08-06T11:24:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="JAVA类加载过程"><a href="#JAVA类加载过程" class="headerlink" title="JAVA类加载过程"></a>JAVA类加载过程</h2><p><img src="https://note.youdao.com/yws/api/personal/file/373A829797DD4A88A69A1FD408AB8535?method=download&amp;shareKey=b76f2d800fdf228d1d31541e358a29ad" alt="JAVA类加载过程"><br><a id="more"></a> </p>
+<ul>
+<li>类从被加载到虚拟机内存中开始，到卸载出内存为止，它的整个生命周期包括：加载（Loading）、验证（Verification）、准备(Preparation)、解析(Resolution)、初始化(Initialization)、使用(Using)和卸载(Unloading)7个阶段。其中验证、准备、解析3个部分统称为连接（Linking）</li>
+<li>加载、验证、准备、初始化和卸载这5个阶段的顺序是确定的，类的加载过程必须按照这种顺序按部就班地开始，而解析阶段则不一定：<strong>它在某些情况下可以在初始化阶段之后再开始</strong>，这是为了支持Java语言的运行时绑定（也称为动态绑定或晚期绑定）。以下陈述的内容都已HotSpot为基准</li>
+<li>加载<br>在加载阶段（可以参考java.lang.ClassLoader的loadClass()方法），虚拟机需要完成以下3件事情：</li>
+</ul>
+<ol>
+<li>通过一个类的全限定名来获取定义此类的二进制字节流（并没有指明要从一个Class文件中获取，可以从其他渠道，譬如：网络、动态生成、数据库等）；</li>
+<li>将这个字节流所代表的静态存储结构转化为<strong>方法区</strong>的运行时数据结构；</li>
+<li>在<strong>JAVA堆</strong>中生成一个代表这个类的java.lang.Class对象，作为方法区这个类的各种数据的访问入口；<br>加载阶段完成后，虚拟机外部的二进制字节流就按照虚拟机所需的格式存储在方法区之中，而且在Java堆中也创建一个java.lang.Class类的对象，这样便可以通过该对象访问方法区中的这些数据</li>
+</ol>
+<ul>
+<li>验证<br>验证是连接阶段的第一步，这一阶段的目的是为了确保Class文件的字节流中包含的信息符合当前虚拟机的要求，并且不会危害虚拟机自身的安全。<br>验证阶段大致会完成4个阶段的检验动作：</li>
+</ul>
+<ol>
+<li>文件格式验证：验证字节流是否符合Class文件格式的规范；例如：是否以魔术0xCAFEBABE开头、主次版本号是否在当前虚拟机的处理范围之内、常量池中的常量是否有不被支持的类型。</li>
+<li>元数据验证：对字节码描述的信息进行语义分析（注意：对比javac编译阶段的语义分析），以保证其描述的信息符合Java语言规范的要求；例如：这个类是否有父类，除了java.lang.Object之外。</li>
+<li>字节码验证：通过数据流和控制流分析，确定程序语义是合法的、符合逻辑的。</li>
+<li>符号引用验证：确保解析动作能正确执行。<br>验证阶段是非常重要的，但不是必须的，它对程序运行期没有影响，如果所引用的类经过反复验证，那么可以考虑采用-Xverifynone参数来关闭大部分的类验证措施，以缩短虚拟机类加载的时间</li>
+</ol>
+<ul>
+<li>准备<br>准备阶段是正式为类变量分配内存并设置类变量初始值的阶段，这些变量所使用的内存都将在方法区中进行分配。这时候进行内存分配的仅包括类变量（被static修饰的变量），而不包括实例变量，实例变量将会在对象实例化时随着对象一起分配在堆中。其次，这里所说的初始值“通常情况”下是数据类型的零值，假设一个类变量的定义为：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public static int value=123;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>那变量value在准备阶段过后的初始值为0而不是123。因为这时候尚未开始执行任何java方法，而把value赋值为123的put static指令是程序被编译后，存放于类构造器()方法之中，所以把value赋值为123的动作将在初始化阶段才会执行。<br>至于“特殊情况”是指：public static final int value=123，即当类字段的字段属性是ConstantValue时，会在准备阶段初始化为指定的值，所以标注为final之后，value的值在准备阶段初始化为123而非0</p>
+<ul>
+<li>解析<br>解析阶段是虚拟机将常量池内的符号引用替换为直接引用的过程。解析动作主要针对类或接口、字段、类方法、接口方法、方法类型、方法句柄和调用点限定符7类符号引用进行</li>
+<li>初始化<br>类初始化阶段是类加载过程的最后一步，到了初始化阶段，才真正开始执行类中定义的java程序代码。在准备极端，变量已经付过一次系统要求的初始值，而在初始化阶段，则根据程序猿通过程序制定的主管计划去初始化类变量和其他资源，或者说：初始化阶段是执行类构造器&lt;clinit&gt;()方法的过程.</li>
+</ul>
+<ol>
+<li>&lt;clinit&gt;()方法是由编译器自动收集类中的所有类变量的赋值动作和静态语句块static{}中的语句合并产生的，编译器收集的顺序是由语句在源文件中出现的顺序所决定的，静态语句块只能访问到定义在静态语句块之前的变量，定义在它之后的变量，在前面的静态语句块可以赋值，但是不能访问</li>
+<li>&lt;clinit&gt;()方法与实例构造器&lt;clinit&gt;()方法不同，它不需要显示地调用父类构造器，虚拟机会保证在子类&lt;clinit&gt;()方法执行之前，父类的&lt;clinit&gt;()方法方法已经执行完毕,由于父类的&lt;clinit&gt;()方法先执行，也就意味着父类中定义的静态语句块要优先于子类的变量赋值操作。</li>
+<li>&lt;clinit&gt;()方法对于类或者接口来说并不是必需的，如果一个类中没有静态语句块，也没有对变量的赋值操作，那么编译器可以不为这个类生产&lt;clinit&gt;()方法。</li>
+<li>接口中不能使用静态语句块，但仍然有变量初始化的赋值操作，因此接口与类一样都会生成&lt;clinit&gt;()方法。<strong>但接口与类不同的是，执行接口的&lt;clinit&gt;()方法不需要先执行父接口的&lt;clinit&gt;()方法。只有当父接口中定义的变量使用时，父接口才会初始化。另外，接口的实现类在初始化时也一样不会执行接口的&lt;clinit&gt;()方法</strong>。</li>
+<li>虚拟机会保证一个类的&lt;clinit&gt;()方法在多线程环境中被正确的加锁、同步，如果多个线程同时去初始化一个类，那么只会有一个线程去执行这个类的&lt;clinit&gt;()方法，其他线程都需要阻塞等待，直到活动线程执行&lt;clinit&gt;()方法完毕。如果在一个类的&lt;clinit&gt;()方法中有好事很长的操作，就可能造成多个线程阻塞，在实际应用中这种阻塞往往是隐藏的。<h2 id="JAVA类加载器"><a href="#JAVA类加载器" class="headerlink" title="JAVA类加载器"></a>JAVA类加载器</h2></li>
+</ol>
+<ul>
+<li>类加载器：加载类的代码，在使用一个类之前，JVM需要先将该类的字节码文件（.class文件）从磁盘、网络或其他来源加载到内存中，并对字节码进行解析生成对应的Class对象，这就是类加载器的功能；利用类加载器，可以实现类的动态加载</li>
+<li>类加载机制：在Java中，采用<strong>双亲委派机制</strong>来实现类的加载</li>
+</ul>
+<ol>
+<li>类的加载过程采用委托模式实现</li>
+<li>每个 ClassLoader 都有一个父加载器</li>
+<li>类加载器在加载类之前会先递归的去尝试使用父加载器加载</li>
+<li>虚拟机有一个内建的启动类加载器（bootstrap ClassLoader），该加载器没有父加载器，但是可以作为其他加载器的父加载器</li>
+<li>Java 提供三种类型的系统类加载器。第一种是启动类加载器，由C++语言实现，属于JVM的一部分，其作用是加载 &lt;Java_Runtime_Home&gt;/lib 目录中的文件，并且该类加载器只加载<strong>特定名称</strong>的文件（如 rt.jar），而<strong>不是该目录下所有</strong>的文件；另外两种是Java语言自身实现的类加载器，包括扩展类加载器（ExtClassLoader）和应用类加载器（AppClassLoader），扩展类加载器负责加载&lt;Java_Runtime_Home&gt;\lib\ext目录中或系统变量 java.ext.dirs所指定的目录中的文件。应用类加载器负责加载用户类路径中的文件。用户可以直接使用扩展类加载器或应用类加载器来加载自己的类，但是用户无法直接使用启动类加载器；除了这两种类加载器以外，用户也可以自定义类加载器</li>
+</ol>
+<ul>
+<li>类加载的顺序</li>
+</ul>
+<ol>
+<li>加载过程中会先检查类是否被已加载，检查顺序是自底向上，从Custom ClassLoader到BootStrap ClassLoader逐层检查，只要某个classloader已加载就视为已加载此类，保证此类只所有ClassLoader加载一次。而加载的顺序是自顶向下，也就是由上层来逐层尝试加载此类</li>
+<li>在加载类时，每个类加载器会将加载任务上交给其父，如果其父找不到，再由自己去加载</li>
+<li>Bootstrap Loader（启动类加载器）是最顶级的类加载器了，其父加载器为null</li>
+</ol>
+<ul>
+<li>具体加载顺序</li>
+</ul>
+<ol>
+<li>虚拟机在首次加载Java类时，会对静态初始化块、静态成员变量、静态方法进行一次初始化</li>
+<li>只有在调用new方法时才会创建类的实例</li>
+<li>类实例创建过程：按照父子继承关系进行初始化，首先执行父类的初始化块部分，然后是父类的构造方法；再执行本类继承的子类的初始化块，最后是子类的构造方法</li>
+<li>类实例销毁时候，首先销毁子类部分，再销毁父类部分</li>
+</ol>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/asset/img/alipay.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/asset/img/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -182,7 +279,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -195,70 +292,53 @@
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/05/javamemory/" class="archive-article-date">
-  	<time datetime="2017-08-05T10:24:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-05</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2017/08/05/javamemory/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JAVA内存管理</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/05/javamemory/">JAVA内存管理</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">内存管理</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/编程语言//" class="article-tag-list-link color5">编程语言</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -279,8 +359,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
