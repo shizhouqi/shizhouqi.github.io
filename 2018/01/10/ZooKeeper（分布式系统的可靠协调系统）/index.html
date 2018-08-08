@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="而立之年">
 <meta property="og:description" content="概念 ZooKeeper是一个分布式的、开放源码的分布式应用系统的协调服务； 是为分布式应用程序提供一致性服务的软件，提供的服务：配置维护、域名服务、组服务、分布式同步、分布式消息队列、分布式通知/协调等； 其目标是将复杂易出错的关键服务进行封装，提供简单易用、性能高效、功能稳定的系统； ZooKeeper提供了基本的分布式独享锁、选举、队列的接口； ZooKeeper=数据结构 + 原语 + w">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-08T12:03:55.000Z">
+<meta property="og:updated_time" content="2018-08-08T12:48:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ZooKeeper（分布式系统的可靠协调系统）">
 <meta name="twitter:description" content="概念 ZooKeeper是一个分布式的、开放源码的分布式应用系统的协调服务； 是为分布式应用程序提供一致性服务的软件，提供的服务：配置维护、域名服务、组服务、分布式同步、分布式消息队列、分布式通知/协调等； 其目标是将复杂易出错的关键服务进行封装，提供简单易用、性能高效、功能稳定的系统； ZooKeeper提供了基本的分布式独享锁、选举、队列的接口； ZooKeeper=数据结构 + 原语 + w">
@@ -164,13 +164,18 @@
 <li>是为分布式应用程序提供<strong>一致性服务</strong>的软件，提供的服务：配置维护、域名服务、组服务、分布式同步、分布式消息队列、分布式通知/协调等；</li>
 <li>其目标是将复杂易出错的关键服务进行封装，提供简单易用、性能高效、功能稳定的系统；</li>
 <li>ZooKeeper提供了基本的<strong>分布式独享锁</strong>、<strong>选举</strong>、<strong>队列</strong>的接口；</li>
-<li>ZooKeeper=数据结构 + 原语 + watcher机制；<h2 id="数据结构Znode"><a href="#数据结构Znode" class="headerlink" title="数据结构Znode"></a>数据结构Znode</h2>ZooKeeper引入的数据结构Znode类似于文件系统，用于一个树层次的命名空间，但也有不同之处：</li>
+<li>ZooKeeper=数据结构 + 原语 + watcher机制。<a id="more"></a>
+<h2 id="数据结构Znode"><a href="#数据结构Znode" class="headerlink" title="数据结构Znode"></a>数据结构Znode</h2></li>
+</ol>
+<ul>
+<li>ZooKeeper引入的数据结构Znode类似于文件系统，用于一个树层次的命名空间，但也有不同之处：</li>
+</ul>
+<ol>
 <li>Znode通过<strong>路径引用</strong>，路径必须是以斜杠开头的绝对路径，且必须是唯一的；</li>
 <li>Znode有文件和目录的特点，有数据、元数据、ACL、时间戳等数据，也有子节点；</li>
 <li>数据访问方式是原子性的操作，读取的时候读取所有数据，写入的时候替换所有的数据；</li>
 <li>节点类型有两种：临时节点（<strong>会话断开就会被删除，不能拥有子节点</strong>）、永久节点（需要客户端主动删除）；</li>
-<li>客户端可以在节点上设置watcher，当节点状态发生改变是将触发对应的操作，触发时只会触发一次；<a id="more"></a>
-<h2 id="原语"><a href="#原语" class="headerlink" title="原语"></a>原语</h2><h2 id="Watcher机制"><a href="#Watcher机制" class="headerlink" title="Watcher机制"></a>Watcher机制</h2><h2 id="Cli操作"><a href="#Cli操作" class="headerlink" title="Cli操作"></a>Cli操作</h2></li>
+<li>客户端可以在节点上设置watcher，当节点状态发生改变是将触发对应的操作，触发时只会触发一次；<h2 id="原语"><a href="#原语" class="headerlink" title="原语"></a>原语</h2><h2 id="Watcher机制"><a href="#Watcher机制" class="headerlink" title="Watcher机制"></a>Watcher机制</h2><h2 id="Cli操作"><a href="#Cli操作" class="headerlink" title="Cli操作"></a>Cli操作</h2></li>
 </ol>
 <ul>
 <li><p>创建Znodes</p>
@@ -477,10 +482,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Lombok</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Redis</a>
               </li>
              
@@ -493,15 +494,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">SSH2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">ZooKeeper</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">一致性算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">SSH2</a>
+                <a href="javascript:void(0)" class="js-tag color2">Lombok</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -510,6 +511,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">系统设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">一致性算法</a>
               </li>
             
             <div class="clearfix"></div>
