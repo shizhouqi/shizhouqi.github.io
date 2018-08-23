@@ -6,18 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://shizhouqi.github.io">
-  <title>Tag: 序列化 | 而立之年</title>
+  <title>信息安全基础 | 而立之年</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="开始记录生活的点滴">
-<meta property="og:type" content="website">
-<meta property="og:title" content="而立之年">
-<meta property="og:url" content="https://shizhouqi.github.io/tags/序列化/index.html">
+  <meta name="description" content="引言 密码学是信息安全的基础，本文首先介绍密码学的基础概念，然后介绍日常中都会接触的数字签名、数字证书和HTTPS技术是如何保障安全的。 信息安全主要的实现目标有   真实性:对信息的来源进行判断，能对伪造来源的信息予以鉴别； 保密性:保证机密信息不被窃听，或窃听者不能了解信息的真实含义; 完整性:保证数据的一致性，防止数据被非法用户篡改; 可用性:保证合法用户对信息和资源的使用不会被不正当地拒绝">
+<meta name="keywords" content="安全技术">
+<meta property="og:type" content="article">
+<meta property="og:title" content="信息安全基础">
+<meta property="og:url" content="https://shizhouqi.github.io/2018/08/23/信息安全基础/index.html">
 <meta property="og:site_name" content="而立之年">
-<meta property="og:description" content="开始记录生活的点滴">
+<meta property="og:description" content="引言 密码学是信息安全的基础，本文首先介绍密码学的基础概念，然后介绍日常中都会接触的数字签名、数字证书和HTTPS技术是如何保障安全的。 信息安全主要的实现目标有   真实性:对信息的来源进行判断，能对伪造来源的信息予以鉴别； 保密性:保证机密信息不被窃听，或窃听者不能了解信息的真实含义; 完整性:保证数据的一致性，防止数据被非法用户篡改; 可用性:保证合法用户对信息和资源的使用不会被不正当地拒绝">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://note.youdao.com/yws/api/personal/file/WEB8ba5c493abf85ab569690229c2f58d3d?method=download&shareKey=0f0208572e1343c0af55b65a38a69618">
+<meta property="og:image" content="https://note.youdao.com/yws/api/personal/file/WEB49eebb40bee200af9981a17676d8c4aa?method=download&shareKey=bcf2da3abcd76780d0ba618f538c3f22">
+<meta property="og:image" content="https://note.youdao.com/yws/api/personal/file/WEB04b37894c1bc58763030ac773220bb2c?method=download&shareKey=e12d8c37d38c02c110c8270bb1e66e62">
+<meta property="og:image" content="https://note.youdao.com/yws/api/personal/file/WEB2d96cd0767229574b3f10e29590b6743?method=download&shareKey=8bfc2b12ef16b87f3fb49576625dba29">
+<meta property="og:image" content="https://note.youdao.com/yws/api/personal/file/WEB298acc733fb2ad9c88006437dd56e650?method=download&shareKey=95cd8f15ba9f6d9f6e7289ca118e18a1">
+<meta property="og:updated_time" content="2018-08-23T15:44:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="而立之年">
-<meta name="twitter:description" content="开始记录生活的点滴">
+<meta name="twitter:title" content="信息安全基础">
+<meta name="twitter:description" content="引言 密码学是信息安全的基础，本文首先介绍密码学的基础概念，然后介绍日常中都会接触的数字签名、数字证书和HTTPS技术是如何保障安全的。 信息安全主要的实现目标有   真实性:对信息的来源进行判断，能对伪造来源的信息予以鉴别； 保密性:保证机密信息不被窃听，或窃听者不能了解信息的真实含义; 完整性:保证数据的一致性，防止数据被非法用户篡改; 可用性:保证合法用户对信息和资源的使用不会被不正当地拒绝">
+<meta name="twitter:image" content="https://note.youdao.com/yws/api/personal/file/WEB8ba5c493abf85ab569690229c2f58d3d?method=download&shareKey=0f0208572e1343c0af55b65a38a69618">
   
   
     <link rel="icon" href="/asset/img/icon.png">
@@ -137,75 +145,167 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-信息安全基础" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/18/JAVA Serializable 与 Externalizable/" class="archive-article-date">
-  	<time datetime="2017-08-18T11:21:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-18</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/18/JAVA Serializable 与 Externalizable/">JAVA Serializable 与 Externalizable</a>
+    <h1 class="article-title" itemprop="name">
+      信息安全基础
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/08/23/信息安全基础/" class="archive-article-date">
+  	<time datetime="2018-08-23T14:00:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><ul>
+<li>密码学是信息安全的基础，本文首先介绍密码学的基础概念，然后介绍日常中都会接触的数字签名、数字证书和HTTPS技术是如何保障安全的。</li>
+<li>信息安全主要的实现目标有</li>
+</ul>
+<ol>
+<li>真实性:对信息的来源进行判断，能对伪造来源的信息予以鉴别；</li>
+<li>保密性:保证机密信息不被窃听，或窃听者不能了解信息的真实含义;</li>
+<li>完整性:保证数据的一致性，防止数据被非法用户篡改;</li>
+<li>可用性:保证合法用户对信息和资源的使用不会被不正当地拒绝;</li>
+<li>不可抵赖性:建立有效的责任机制，防止用户否认其行为;</li>
+<li>可控制性:对信息的传播及内容具有控制能力;<a id="more"></a>
+<h2 id="密码学基本概念"><a href="#密码学基本概念" class="headerlink" title="密码学基本概念"></a>密码学基本概念</h2></li>
+</ol>
+<ul>
+<li>密码学：是研究信息系统安全保密的学科，其基本的加解密过程如下<br><img src="https://note.youdao.com/yws/api/personal/file/WEB8ba5c493abf85ab569690229c2f58d3d?method=download&amp;shareKey=0f0208572e1343c0af55b65a38a69618" alt="基本的加解密操作"></li>
+<li>对密码学可以按如下方式进行分类</li>
+</ul>
+<ol>
+<li>按密钥的数量，可以分为单密钥（对称加密）和双密钥（非对称加密）<br>a. 对称加密：就是加密密钥和解密密钥是相同的，运算速度较快，如DES，3DES，AES，IDEA，RC系列。密钥需要进行保密。<br>b. 非对称加密：就是加密密钥和解密密钥是不相同的，从一个很难推出另一个，运算速度较慢，如RSA。其中公开让别人知道的叫公钥，需要进行保密的叫私钥。</li>
+<li>按执行的操作，可以分为替换加密和换位加密<br>a. 替换加密：就是将明文中的每一个字符替换成密文中的另一个字符，接受者对密文做反向替换就可以恢复出明文。<br>b. 换位加密：又称置换加密，明文和密文的字母保持相同，但在密文中字母的顺序被打乱了</li>
+<li>按明文处理方式，可以分为流加密和分组加密<br>a. 流加密：又称为序列加密，每次加密一位或一字节的明文，是手工和机械密码时代的主流。<br>b. 分组加密：将明文分为固定长度的分组，用同一个密钥和算法对每一个分组进行加密，输出也是固定长度的密文。</li>
+</ol>
+<ul>
+<li>对称加密和非对称加密进行安全传输<br><img src="https://note.youdao.com/yws/api/personal/file/WEB49eebb40bee200af9981a17676d8c4aa?method=download&amp;shareKey=bcf2da3abcd76780d0ba618f538c3f22" alt="对称加密和非对称加密的综合应用"><h2 id="数字签名"><a href="#数字签名" class="headerlink" title="数字签名"></a>数字签名</h2></li>
+<li>数字签名是一种可以提供认证的加密形式，其采用安全的哈希算法和非对称加密算法进行实现。</li>
+<li>安全的哈希算法要求，函数是单向的且创建两条具有相同哈希值的信息非常困难。</li>
+<li>常见的哈希算法有：MD5(128位校验和)、SHA(160位校验和)</li>
+<li>数字签名的流程如下<br><img src="https://note.youdao.com/yws/api/personal/file/WEB04b37894c1bc58763030ac773220bb2c?method=download&amp;shareKey=e12d8c37d38c02c110c8270bb1e66e62" alt="数字签名"><h2 id="PKI数字证书"><a href="#PKI数字证书" class="headerlink" title="PKI数字证书"></a>PKI数字证书</h2></li>
+<li>PKI（公钥基础设施Public Key Infrastructure）数字证书是用于信息的认证、加密的作用，可靠的将信息从端传到端。下图使用数字证书将用户A的公钥发送给用户B<br><img src="https://note.youdao.com/yws/api/personal/file/WEB2d96cd0767229574b3f10e29590b6743?method=download&amp;shareKey=8bfc2b12ef16b87f3fb49576625dba29" alt="数字证书"><h2 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h2></li>
+<li>HTTPS是使用“对称加密和非对称加密进行安全传输”章节的内容和“PKI数字证书”的结合，即使用数字证书将数据接收方的公钥以数字证书的方式，发生至数据发送方。<br><img src="https://note.youdao.com/yws/api/personal/file/WEB298acc733fb2ad9c88006437dd56e650?method=download&amp;shareKey=95cd8f15ba9f6d9f6e7289ca118e18a1" alt="HTTPS"><br>可以将接收方理解成服务器，将发送方理解成客户端。</li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/asset/img/alipay.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/asset/img/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">序列化</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">安全技术</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/编程语言//" class="article-tag-list-link color5">编程语言</a>
+        			<a href="/categories/信息安全//" class="article-tag-list-link color5">信息安全</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/01/18/一致性算法简介/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">一致性算法简介</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -226,9 +326,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

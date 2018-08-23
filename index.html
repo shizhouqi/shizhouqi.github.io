@@ -139,6 +139,103 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-信息安全基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/23/信息安全基础/">信息安全基础</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/23/信息安全基础/" class="archive-article-date">
+  	<time datetime="2018-08-23T14:00:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><ul>
+<li>密码学是信息安全的基础，本文首先介绍密码学的基础概念，然后介绍日常中都会接触的数字签名、数字证书和HTTPS技术是如何保障安全的。</li>
+<li>信息安全主要的实现目标有</li>
+</ul>
+<ol>
+<li>真实性:对信息的来源进行判断，能对伪造来源的信息予以鉴别；</li>
+<li>保密性:保证机密信息不被窃听，或窃听者不能了解信息的真实含义;</li>
+<li>完整性:保证数据的一致性，防止数据被非法用户篡改;</li>
+<li>可用性:保证合法用户对信息和资源的使用不会被不正当地拒绝;</li>
+<li>不可抵赖性:建立有效的责任机制，防止用户否认其行为;</li>
+<li>可控制性:对信息的传播及内容具有控制能力;
+        
+          <a class="article-more-a" href="/2018/08/23/信息安全基础/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">安全技术</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/信息安全//" class="article-tag-list-link color5">信息安全</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/08/23/信息安全基础/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-一致性算法简介" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1032,101 +1129,6 @@
 
 
   
-    <article id="post-JAVA Serializable 与 Externalizable" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/18/JAVA Serializable 与 Externalizable/">JAVA Serializable 与 Externalizable</a>
-    </h1>
-  
-
-        
-        <a href="/2017/08/18/JAVA Serializable 与 Externalizable/" class="archive-article-date">
-  	<time datetime="2017-08-18T11:21:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>JAVA Serializable 与 Externalizable都是序列化对象的接口，如果某个对象需要序列化保存、传输，必须要实现这两个接口中的其中一个，其中：Externalizable是Serializable的子类。</p>
-<h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><ol>
-<li>Serializable在反序列化时，不会调用默认构造函数；Externalizable在反序列化时，会调用默认构造器；因此序列化、反序列化的类实现Externalizable接口，该类必须有默认的<strong>无参构造函数</strong></li>
-<li>Serializable默认情况下，所有的属性都会被序列化，如果某些属性不想被序列化可以使用transient；Externalizable在默认情况下，所有属性都不会被序列化，具体需要序列化哪些需要自己实现</li>
-<li>在使用Serializable时，对于transient的属性，可以通过自己实现writeObject、readObject方法，对transient属性进行序列化
-        
-          <a class="article-more-a" href="/2017/08/18/JAVA Serializable 与 Externalizable/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">序列化</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/编程语言//" class="article-tag-list-link color5">编程语言</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/08/18/JAVA Serializable 与 Externalizable/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1246,10 +1248,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">反射</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">多线程</a>
               </li>
              
@@ -1258,7 +1256,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">反射</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Lombok</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1286,7 +1292,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Lombok</a>
+                <a href="javascript:void(0)" class="js-tag color1">一致性算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1298,7 +1304,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">一致性算法</a>
+                <a href="javascript:void(0)" class="js-tag color5">安全技术</a>
               </li>
             
             <div class="clearfix"></div>
