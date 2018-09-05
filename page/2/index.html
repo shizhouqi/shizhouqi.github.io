@@ -139,6 +139,313 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Lombok使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/28/Lombok使用/">Lombok使用</a>
+    </h1>
+  
+
+        
+        <a href="/2017/08/28/Lombok使用/" class="archive-article-date">
+  	<time datetime="2017-08-28T11:31:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="lombok使用"><a href="#lombok使用" class="headerlink" title="lombok使用"></a>lombok使用</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ul>
+<li>lombok是采用注解的方式，简化代码编写的工具。其在编译时生成相应的源码，不会因为使用注解而影响执行效率。<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2></li>
+<li>eclipse下的安装</li>
+</ul>
+<ol>
+<li>下载lombok.jar，路径为：<a href="https://projectlombok.org/download.html" target="_blank" rel="noopener">https://projectlombok.org/download.html</a></li>
+<li><p>运行lombok.jar</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar lombok.jar</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>确认eclipse.exe的安装路径，点击install/update按钮</p>
+</li>
+<li>重启eclipse使之生效</li>
+</ol>
+<ul>
+<li>IntelliJ IDEA下的安装</li>
+</ul>
+<ol>
+<li>File-&gt;Settings…-&gt;Plugins-&gt;search ‘lombok’</li>
+<li>Browse Repositories-&gt;Install
+        
+          <a class="article-more-a" href="/2017/08/28/Lombok使用/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Lombok</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/编程语言//" class="article-tag-list-link color5">编程语言</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/08/28/Lombok使用/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-JAVA Socket" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/25/JAVA Socket/">JAVA Socket</a>
+    </h1>
+  
+
+        
+        <a href="/2017/08/25/JAVA Socket/" class="archive-article-date">
+  	<time datetime="2017-08-25T11:28:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="同步、异步、阻塞、非阻塞"><a href="#同步、异步、阻塞、非阻塞" class="headerlink" title="同步、异步、阻塞、非阻塞"></a>同步、异步、阻塞、非阻塞</h2><ul>
+<li>同步和异步：主要针对客户端，关注的是<strong>消息通信机制</strong></li>
+<li>同步：当客户端发出一个请求调用时，在没有得到结果前不返回，等获取到结果才返回；必须一件一件的事情去做，做完一件才能做下一件；</li>
+<li>异步：当客户端发出一个请求后立即返回，实际处理部件处理完成以后，通过状态、通知、回调的方式进行处理；客户端可以接着做后面的事情；</li>
+<li>阻塞和非阻塞：主要针对服务端，关注的是<strong>程序在等待调用结果时的状态</strong></li>
+<li>阻塞：服务端被调用者结果返回前，当前线程被挂起；调用线程在得到结果后才返回；</li>
+<li>非阻塞：在不能得到结果前，该调用不会阻塞当前线程；</li>
+<li><a href="http://blog.csdn.net/hjh_walker/article/details/52439160" target="_blank" rel="noopener">较形象的类比1</a>：出场人物：老张，水壶两把（普通水壶，简称水壶；会响的水壶，简称响水壶）</li>
+</ul>
+<ol>
+<li>老张把水壶放到火上，立等水开。（同步阻塞）</li>
+<li>老张把水壶放到火上，去客厅看电视，时不时去厨房看看水开没有。（同步非阻塞）</li>
+<li>老张把响水壶放到火上，立等水开。（异步阻塞）</li>
+<li>老张把响水壶放到火上，去客厅看电视，水壶响之前不再去看它了，响了再去拿壶。（异步非阻塞）
+        
+          <a class="article-more-a" href="/2017/08/25/JAVA Socket/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Socket</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/编程语言//" class="article-tag-list-link color5">编程语言</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/08/25/JAVA Socket/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-JAVA JMX" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/18/JAVA JMX/">JAVA JMX</a>
+    </h1>
+  
+
+        
+        <a href="/2017/08/18/JAVA JMX/" class="archive-article-date">
+  	<time datetime="2017-08-18T11:25:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>JMX是JAVA提供的管理模块，可用于修改应用程序中的属性、主动触发应用程序的相关功能；根据应用的需求，还可以实现<strong>消息通知</strong>的功能；</p>
+<h2 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h2><ol>
+<li>参数的在线修改，提供了一种选择；可以替代property文件的部分功能，也可以替代部分界面配置参照的功能</li>
+<li>可用于实现观察者模式，发布和接受通知
+        
+          <a class="article-more-a" href="/2017/08/18/JAVA JMX/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">JMX</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/编程语言//" class="article-tag-list-link color5">编程语言</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/08/18/JAVA JMX/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-JAVA Serializable 与 Externalizable" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -801,96 +1108,9 @@
 
 
   
-    <article id="post-SQL必知必会" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/28/SQL必知必会/">SQL必知必会</a>
-    </h1>
-  
-
-        
-        <a href="/2016/09/28/SQL必知必会/" class="archive-article-date">
-  	<time datetime="2016-09-28T11:42:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-09-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p><strong>数据库</strong>:保存有组织的数据的容器（通常是一个文件或一组文件）<br><strong>表</strong>:某种特定类型数据的结构化清单<br><strong>模式</strong>:关于数据库和表的布局及特性的信息<br><strong>列</strong>:表中的一个字段。所有表都是有一个或多个列组成<br><strong>数据类型</strong>:所允许的数据的类型。每个表列都有相应的数据类型，它限制该列中存储的数据<br><strong>行</strong>:表中的一个记录<br><strong>主键</strong>:一列或一组列，其值能够唯一标识表中的每一行<br>
-        
-          <a class="article-more-a" href="/2016/09/28/SQL必知必会/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SQL</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/数据库//" class="article-tag-list-link color4">数据库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/09/28/SQL必知必会/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 
@@ -979,11 +1199,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">版本控制</a>
+                <a href="javascript:void(0)" class="js-tag color5">Akka</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -992,6 +1208,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">JMX</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">版本控制</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1007,11 +1231,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">多线程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">枚举</a>
+                <a href="javascript:void(0)" class="js-tag color5">单元测试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1019,7 +1239,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">枚举</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">多线程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">SSH2</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1027,7 +1263,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
+                <a href="javascript:void(0)" class="js-tag color1">一致性算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">安全技术</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1039,22 +1279,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">SSH2</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ZooKeeper</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">一致性算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">过程类系统</a>
               </li>
              
@@ -1063,7 +1287,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">安全技术</a>
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Esper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ZooKeeper</a>
               </li>
             
             <div class="clearfix"></div>
@@ -1114,7 +1346,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">毕业于同济大学 就职于外汇交易中心&lt;br&gt;&lt;br&gt;从事JAVA设计开发&lt;br&gt;&lt;br&gt;目前参与外汇交易系统设计开发工作&lt;br&gt;</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">毕业于同济大学 就职于外汇交易中心&lt;/br&gt;&lt;/br&gt;从事JAVA设计开发&lt;/br&gt;&lt;/br&gt;目前参与外汇交易系统设计开发工作&lt;/br&gt;</div>
   	  	
     	</section>
     
