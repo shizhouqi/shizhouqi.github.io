@@ -139,6 +139,111 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Lombok使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/28/Lombok使用/">Lombok使用</a>
+    </h1>
+  
+
+        
+        <a href="/2017/08/28/Lombok使用/" class="archive-article-date">
+  	<time datetime="2017-08-28T11:31:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="lombok使用"><a href="#lombok使用" class="headerlink" title="lombok使用"></a>lombok使用</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ul>
+<li>lombok是采用注解的方式，简化代码编写的工具。其在编译时生成相应的源码，不会因为使用注解而影响执行效率。<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2></li>
+<li>eclipse下的安装</li>
+</ul>
+<ol>
+<li>下载lombok.jar，路径为：<a href="https://projectlombok.org/download.html" target="_blank" rel="noopener">https://projectlombok.org/download.html</a></li>
+<li><p>运行lombok.jar</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar lombok.jar</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>确认eclipse.exe的安装路径，点击install/update按钮</p>
+</li>
+<li>重启eclipse使之生效</li>
+</ol>
+<ul>
+<li>IntelliJ IDEA下的安装</li>
+</ul>
+<ol>
+<li>File-&gt;Settings…-&gt;Plugins-&gt;search ‘lombok’</li>
+<li>Browse Repositories-&gt;Install
+        
+          <a class="article-more-a" href="/2017/08/28/Lombok使用/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/编程语言//" class="article-tag-list-link color5">编程语言</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/08/28/Lombok使用/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-JAVA Socket" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -959,99 +1064,6 @@
 
 
   
-    <article id="post-过程类系统设计方案" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/31/过程类系统设计方案/">过程类系统设计方案</a>
-    </h1>
-  
-
-        
-        <a href="/2017/05/31/过程类系统设计方案/" class="archive-article-date">
-  	<time datetime="2017-05-31T12:10:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>在实际系统建设过程中，时常可以发现一些过程性的功能，往往表现为：<strong>整体流程相似，具体内部的实现细节千差万别</strong>。在不熟悉系统业务的人看来，系统很简单，但对于开发人员来说，往往是一场噩梦。</p>
-<h2 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h2><p>本文介绍的内容适用于如下场景的系统：</p>
-<ul>
-<li>系统可以抽象出具体的过程</li>
-<li>系统的业务复杂，变更频繁，难以维护</li>
-<li>系统要求有灵活性、可扩展性、可配置性</li>
-<li>系统对于性能没有很高的要求
-        
-          <a class="article-more-a" href="/2017/05/31/过程类系统设计方案/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计方案</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/系统设计//" class="article-tag-list-link color5">系统设计</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/31/过程类系统设计方案/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -1155,11 +1167,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+                <a href="javascript:void(0)" class="js-tag color4">中间件</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">中间件</a>
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
               <li class="article-tag-list-item">

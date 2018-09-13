@@ -139,31 +139,31 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Akka" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Akka有限状态机" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/05/Akka/">Akka</a>
+      <a class="article-title" href="/2018/09/10/Akka有限状态机/">Akka有限状态机</a>
     </h1>
   
 
         
-        <a href="/2018/09/05/Akka/" class="archive-article-date">
-  	<time datetime="2018-09-05T12:18:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-05</time>
+        <a href="/2018/09/10/Akka有限状态机/" class="archive-article-date">
+  	<time datetime="2018-09-10T12:58:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-10</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Actor编程模型"><a href="#Actor编程模型" class="headerlink" title="Actor编程模型"></a>Actor编程模型</h2><ul>
-<li>使用JAVA进行并发编程，同步和互斥处理难度较大，而且经常出现一些很难测试的问题。Actor编程模型的提出是为了避免这些问题，其通过状态由actor自己维护和修改来实现。</li>
-<li>Actor有三部分组成：状态（State）、行为（Behavior）、邮箱（mailBox）。
+        <h2 id="有限状态状态机的概念"><a href="#有限状态状态机的概念" class="headerlink" title="有限状态状态机的概念"></a>有限状态状态机的概念</h2><ul>
+<li>有限状态机（Finite-state machine, FSM），是表示有限个状态以及这些状态之间的转移和动作等行为的数学模型。<h2 id="哲学家就餐案例"><a href="#哲学家就餐案例" class="headerlink" title="哲学家就餐案例"></a>哲学家就餐案例</h2></li>
+<li>哲学家就餐问题：五个哲学家，围坐在一个圆桌上，他们在思考和吃饭之间进行交替。桌子上放着5根筷子，分别放着五个哲学家之间。平时，哲学家进行思考，饥饿时需要试图取到他左手边和右手边的两根筷子，只有在他拿到两只筷子时才能进餐。进餐完毕，放下筷子继续思考。
         
-          <a class="article-more-a" href="/2018/09/05/Akka/#more">more >></a>
+          <a class="article-more-a" href="/2018/09/10/Akka有限状态机/#more">more >></a>
         
       
 
@@ -198,7 +198,96 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/05/Akka/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/09/10/Akka有限状态机/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Akka介绍" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/05/Akka介绍/">Akka介绍</a>
+    </h1>
+  
+
+        
+        <a href="/2018/09/05/Akka介绍/" class="archive-article-date">
+  	<time datetime="2018-09-05T12:18:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Actor编程模型"><a href="#Actor编程模型" class="headerlink" title="Actor编程模型"></a>Actor编程模型</h2><ul>
+<li>使用JAVA进行并发编程，同步和互斥处理难度较大，而且经常出现一些很难测试的问题。Actor编程模型的提出是为了避免这些问题，其通过状态由actor自己维护和修改来实现。</li>
+<li>Actor有三部分组成：状态（State）、行为（Behavior）、邮箱（mailBox）。
+        
+          <a class="article-more-a" href="/2018/09/05/Akka介绍/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Akka</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/分布式//" class="article-tag-list-link color4">分布式</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/09/05/Akka介绍/">展开全文 >></a>
         </p>
       
 
@@ -981,111 +1070,6 @@
 
 
   
-    <article id="post-Lombok使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/28/Lombok使用/">Lombok使用</a>
-    </h1>
-  
-
-        
-        <a href="/2017/08/28/Lombok使用/" class="archive-article-date">
-  	<time datetime="2017-08-28T11:31:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="lombok使用"><a href="#lombok使用" class="headerlink" title="lombok使用"></a>lombok使用</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ul>
-<li>lombok是采用注解的方式，简化代码编写的工具。其在编译时生成相应的源码，不会因为使用注解而影响执行效率。<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2></li>
-<li>eclipse下的安装</li>
-</ul>
-<ol>
-<li>下载lombok.jar，路径为：<a href="https://projectlombok.org/download.html" target="_blank" rel="noopener">https://projectlombok.org/download.html</a></li>
-<li><p>运行lombok.jar</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar lombok.jar</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>确认eclipse.exe的安装路径，点击install/update按钮</p>
-</li>
-<li>重启eclipse使之生效</li>
-</ol>
-<ul>
-<li>IntelliJ IDEA下的安装</li>
-</ul>
-<ol>
-<li>File-&gt;Settings…-&gt;Plugins-&gt;search ‘lombok’</li>
-<li>Browse Repositories-&gt;Install
-        
-          <a class="article-more-a" href="/2017/08/28/Lombok使用/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/编程语言//" class="article-tag-list-link color5">编程语言</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/08/28/Lombok使用/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1189,11 +1173,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+                <a href="javascript:void(0)" class="js-tag color4">中间件</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">中间件</a>
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
               <li class="article-tag-list-item">
